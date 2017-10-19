@@ -1,0 +1,38 @@
+
+/**
+ * Write a description of class LoopingMediaLib here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class LoopingMediaLib
+{
+    public static void main()
+    {
+        String songInfo = MediaFile.readString();
+        
+        /*for (int x = -1; x <= 7; x++)
+        {
+            System.out.println(MediaFile.readString());
+        }*/
+        
+        
+        while(songInfo != null)
+        {
+            String title = songInfo.substring(0, songInfo.indexOf("|"));
+            System.out.println("Title: " + title);
+            String rating = songInfo.substring(songInfo.indexOf("|")+1);
+            System.out.println("Rating: " + rating);
+            System.out.println();
+            
+            songInfo = MediaFile.readString();
+        }
+        
+        /*while (songInfo != null)
+        {
+            System.out.println(MediaFile.readString());
+        }
+       */
+        
+    }
+}
