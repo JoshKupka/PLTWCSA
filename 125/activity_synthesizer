@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.pltw.examples.synthesizer.SynthesizerActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/eButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="onEButtonClick"
+        android:text="@string/eButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fsButton" />
+
+
+    <Button
+        android:id="@+id/fButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="onFButtonClick"
+        android:text="@string/fButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eButton" />
+
+    <Button
+        android:id="@+id/fsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="129dp"
+        android:onClick="onFSButtonClick"
+        android:text="@string/fsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/challengeButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="onChallenge1Click"
+        android:text="@string/challenge1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fButton" />
+
+    <NumberPicker
+        android:id="@+id/notePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginStart="29dp"
+        app:layout_constraintStart_toEndOf="@+id/challengeButton1"
+        app:layout_constraintTop_toBottomOf="@+id/PickLabel1" />
+
+    <NumberPicker
+        android:id="@+id/multiplierSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="141dp"
+        app:layout_constraintStart_toEndOf="@+id/notePicker"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PickLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="122dp"
+        android:text="@string/Note"
+        app:layout_constraintStart_toEndOf="@+id/fsButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PickLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="122dp"
+        android:text="@string/Multi"
+        app:layout_constraintBottom_toTopOf="@+id/multiplierSelector"
+        app:layout_constraintStart_toEndOf="@+id/PickLabel1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:id="@+id/challengeButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onChallenge2Click"
+        android:layout_marginStart="16dp"
+        android:text="@string/challenge2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/challengeButton1" />
+
+    <Button
+        android:id="@+id/challengeButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/challenge3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/challengeButton2" />
+
+
+</android.support.constraint.ConstraintLayout>
