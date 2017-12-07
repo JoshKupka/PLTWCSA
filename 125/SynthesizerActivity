@@ -1,0 +1,328 @@
+package org.pltw.examples.synthesizer;
+
+import android.media.MediaPlayer;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.NumberPicker;
+
+public class SynthesizerActivity extends AppCompatActivity {
+
+
+    private static final String TAG =
+            SynthesizerActivity.class.getName();
+    private Button eButton;
+    private Button fButton;
+    private Button fsButton;
+    private NumberPicker notePicker;
+    private NumberPicker multiplierPicker;
+    private Button mChallenge1;
+    private Button mChallenge2;
+    private Button mChallenge3;
+    private MediaPlayer Chal3;
+    private MediaPlayer mpE;
+    private MediaPlayer mpF;
+    private MediaPlayer mpFS;
+    private MediaPlayer mpA;
+    private MediaPlayer mpG;
+    private MediaPlayer mpB;
+    private MediaPlayer mpCS;
+    private MediaPlayer mpD;
+    private MediaPlayer mpHE;
+    private MediaPlayer mpBB;
+    private MediaPlayer mpDS;
+    private MediaPlayer mpGS;
+    private MediaPlayer mpHF;
+    private MediaPlayer mpHFS;
+    private MediaPlayer mpHG;
+    private MediaPlayer mpC;
+
+
+    private final int WHOLE_NOTE = 1000;
+    private final int HALF_NOTE = 500;
+    int count = 0;
+
+    private void delayPlaying(int delay) throws InterruptedException {
+        try {
+            Thread.sleep(delay);
+        } catch (InterruptedException e) {
+            Log.e("SynthesizerActivity", "Audio playback interrupted");
+        }
+    }
+
+
+    public void resetAll() {
+        mpE.seekTo(0);
+        mpHE.seekTo(0);
+        mpF.seekTo(0);
+        mpA.seekTo(0);
+        mpB.seekTo(0);
+        mpCS.seekTo(0);
+        mpG.seekTo(0);
+        mpFS.seekTo(0);
+        mpD.seekTo(0);
+        mpGS.seekTo(0);
+        mpDS.seekTo(0);
+        mpBB.seekTo(0);
+        mpC.seekTo(0);
+        mpHFS.seekTo(0);
+        mpHG.seekTo(0);
+        mpHF.seekTo(0);
+    }
+
+    public void onChallenge1Click(View v) {
+        mChallenge1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+
+            {
+                Log.e("SynthesizerActivity", "Challenge Button 1 Clicked");
+                try {
+                    mpE.seekTo(0);
+                    mpFS.seekTo(0);
+                    mpD.seekTo(0);
+                    mpHE.seekTo(0);
+                    mpB.seekTo(0);
+                    mpA.seekTo(0);
+                    mpCS.seekTo(0);
+                    mpG.seekTo(0);
+                    mpE.start();
+                    delayPlaying(HALF_NOTE);
+                    mpFS.start();
+                    delayPlaying(HALF_NOTE);
+                    mpG.start();
+                    delayPlaying(HALF_NOTE);
+                    mpA.start();
+                    delayPlaying(HALF_NOTE);
+                    mpB.start();
+                    delayPlaying(HALF_NOTE);
+                    mpCS.start();
+                    delayPlaying(HALF_NOTE);
+                    mpD.start();
+                    delayPlaying(HALF_NOTE);
+                    mpHE.start();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    MediaPlayer[] mplist = {mpHFS,mpHF,mpHG,mpC,mpCS,mpA,mpB,mpBB,mpHE,mpE,mpDS,mpD,mpF,mpF,mpFS};
+
+    MediaPlayer []c1 = new MediaPlayer[]{mpE,mpFS,mpD,mpHE,mpB,mpA,mpCS,mpG};
+
+
+
+    public void onChallenge2Click(View v) {
+        mChallenge2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+
+            {
+                Log.e("SynthesizerActivity", "Challenge Button 2 Clicked");
+                try {
+                    int i = 0;
+                    if (notePicker.getValue() == 1) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpC.seekTo(0);
+                            delayPlaying(1000);
+                            mpC.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 2) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpCS.seekTo(0);
+                            delayPlaying(1000);
+                            mpCS.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 3) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpD.seekTo(0);
+                            delayPlaying(1000);
+                            mpD.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 4) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpDS.seekTo(0);
+                            delayPlaying(1000);
+                            mpDS.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 5) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpHE.seekTo(0);
+                            delayPlaying(1000);
+                            mpHE.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 6) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpE.seekTo(0);
+                            delayPlaying(1000);
+                            mpE.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 7) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpHF.seekTo(0);
+                            delayPlaying(1000);
+                            mpHF.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 8) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpF.seekTo(0);
+                            delayPlaying(1000);
+                            mpF.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 9) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpFS.seekTo(0);
+                            delayPlaying(1000);
+                            mpFS.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 10) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpGS.seekTo(0);
+                            delayPlaying(1000);
+                            mpGS.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 11) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpG.seekTo(0);
+                            delayPlaying(1000);
+                            mpG.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 12) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpBB.seekTo(0);
+                            delayPlaying(1000);
+                            mpBB.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 13) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpB.seekTo(0);
+                            delayPlaying(1000);
+                            mpB.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 14) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpHG.seekTo(0);
+                            delayPlaying(1000);
+                            mpHG.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 15) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpA.seekTo(0);
+                            delayPlaying(1000);
+                            mpA.start();
+                            i++;
+                        }
+                    } else if (notePicker.getValue() == 16) {
+                        while (i < multiplierPicker.getValue()) {
+                            mpHFS.seekTo(0);
+                            delayPlaying(1000);
+                            mpHFS.start();
+                            i++;
+                        }
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void onChallenge3Click(View v) {
+        mChallenge3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+
+            {
+                Log.e("SynthesizerActivity", "Challenge Button 1 Clicked");
+                try {
+                    for (c1:c1.length) {
+
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void onEButtonClick(View v) {
+        mpE.seekTo(0);
+        Log.i(TAG, "E Note Played");
+        mpE.start();
+    }
+
+    public void onFButtonClick(View v) {
+        mpF.seekTo(0);
+        Log.i(TAG, "F Note Played");
+        mpF.start();
+    }
+
+    public void onFSButtonClick(View v) {
+        mpFS.seekTo(0);
+        Log.i(TAG, "FS Note Played");
+        mpFS.start();
+    }
+
+
+    @Override
+    protected void onCreate(Bundle
+                                    savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_synthesizer);
+        eButton = (Button) findViewById(R.id.eButton);
+        fButton = (Button) findViewById(R.id.fButton);
+        fsButton = (Button) findViewById(R.id.fsButton);
+        mChallenge1 = (Button) findViewById(R.id.challengeButton1);
+        mChallenge2 = (Button) findViewById(R.id.challengeButton2);
+        mChallenge3 = (Button) findViewById(R.id.challengeButton3);
+        notePicker = (NumberPicker) findViewById(R.id.notePicker);
+        multiplierPicker = (NumberPicker) findViewById(R.id.multiplierSelector);
+
+        notePicker.setValue(1);
+        notePicker.setMinValue(1);
+        notePicker.setMaxValue(16);
+        multiplierPicker.setValue(1);
+        multiplierPicker.setMinValue(1);
+        multiplierPicker.setMaxValue(99);
+
+
+        mpE = MediaPlayer.create(this, R.raw.scalee);
+        mpF = MediaPlayer.create(this, R.raw.scalef);
+        mpHE = MediaPlayer.create(this, R.raw.scalehighe);
+        mpB = MediaPlayer.create(this, R.raw.scaleb);
+        mpFS = MediaPlayer.create(this, R.raw.scalefs);
+        mpA = MediaPlayer.create(this, R.raw.scalea);
+        mpCS = MediaPlayer.create(this, R.raw.scalecs);
+        mpG = MediaPlayer.create(this, R.raw.scaleg);
+        mpD = MediaPlayer.create(this, R.raw.scaled);
+        mpC = MediaPlayer.create(this, R.raw.scalec);
+        mpBB = MediaPlayer.create(this, R.raw.scalebb);
+        mpHFS = MediaPlayer.create(this, R.raw.scalehighfs);
+        mpHG = MediaPlayer.create(this, R.raw.scalehighg);
+        mpHF = MediaPlayer.create(this, R.raw.scalehighf);
+        mpGS = MediaPlayer.create(this, R.raw.scalegs);
+        mpDS = MediaPlayer.create(this, R.raw.scaleds);
+
+
+    }
+}
